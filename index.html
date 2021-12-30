@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트명</title>
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <!-- UI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- UI JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="/js/jquery.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <div class="container col-group">
+                <div class="pc">
+                    <div class="col-group">
+                        <div class="col-group">
+                            <h1 class="logo">
+                                <a href="/index.html"><img src="/images/" alt="로고"></a>
+                            </h1>
+                            <nav class="col-group gnb-group">
+                                <a href="./pages/service.html">서비스</a>
+                                <a href="./pages/teacher.html">강사</a>
+                                <a href="./pages/creator.html">크리에이터</a>
+                            </nav>
+                        </div>
+                        <nav class="col-group register-group">
+                            <button @click="loginDialogVisible = true">로그인</button>
+                            <button @click="demoDialogVisible01 = true">무료로 시작하기</button>
+                        </nav>
+                    </div>
+                </div>
+                <div class="mobile">
+                    <div class="col-group">
+                        <h1 class="logo">
+                            <a href="/index.html"><img src="/images/" alt="로고"></a>
+                        </h1>
+                        <button class="menu" @click="mMennu">
+                            <img src="/images/icon/icon_menu.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="side-menu-group" v-show="isShow">
+                        <div class="side-menu-header"><img src="./images/icon/icon_close.svg" alt="" @click="isShow = false"></div>
+                        <div class="side-menu-body">
+                            <a href="">서비스</a>
+                            <a href="">강사</a>
+                            <a href="">크리에이터</a>
+                            <button @click="loginDialogVisible = true">로그인</button>
+                            <button @click="demoDialogVisible01 = true">무료로 시작하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </header>
+        <!-- //header -->
+
+        <main id="main" class="main-wrap">
+            <div class="banner">
+                <div class="container">
+                    <div class="txt-box">
+                        <h2>
+                            프리랜서 강사와 크리에이터를 위한 <br class="pc">
+                            원스탑 서비스
+                        </h2>
+                        <div class="btn-group">
+                            <button @click="demoDialogVisible01 = true">무료로 시작하기</button>
+                            <a href="./pages/demo.html">데모 영상 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer"></footer>
+        <!-- //footer -->
+
+        <el-dialog
+        title="Project-A에 오신 것을 환영합니다."
+        :visible.sync="demoDialogVisible01"
+        class="pop-wrap"
+        width="40%"
+        center>
+            <form action="" method="GET">
+                <div class="content">
+                    <label for="userName">이름</label>
+                    <div class="col-group email-confirm-box">
+                        <input type="text" name="userName" id="userName" placeholder="이름">
+                    </div>
+                </div>
+                <div class="content">
+                    <label for="userEmail">이메일</label>
+                    <div class="col-group email-confirm-group">
+                        <input type="text" name="userEmail" id="userEmail" placeholder="이메일">
+                        <button type="button" @click="demoDialogVisible02 = true">신청하기</button>
+                        <!-- 버튼 클릭시 01번 팝업은 닫아주세요. -->
+                    </div>
+                </div>
+            </form>
+        </el-dialog>
+        <!-- //01. 이메일 전송 팝업 -->
+
+        <el-dialog
+        title="이메일로 인증코드가 전송되었습니다."
+        :visible.sync="demoDialogVisible02"
+        class="pop-wrap"
+        width="40%"
+        center>
+            <form action="" method="GET">
+                <div class="content">
+                    <div class="col-group email-confirm-group">
+                        <input type="text" name="userEmailConfirm" id="userEmailConfirm" placeholder="인증번호 입력">
+                        <button type="button" @click="demoDialogVisible03 = true">인증하기</button>
+                        <!-- 버튼 클릭시 02번 팝업은 닫아주세요. -->
+                    </div>
+                </div>
+            </form>
+        </el-dialog>
+        <!-- //02. 이메일 인증 팝업 -->
+
+        <el-dialog
+        title="인증 완료"
+        :visible.sync="demoDialogVisible03"
+        class="pop-wrap pop-wrap3"
+        width="40%"
+        center>
+            <form action="" method="GET">
+                <div class="content">
+                    <div class="col-group email-confirm-group">
+                        <button>서비스 이용하기</button>
+                    </div>
+                </div>
+            </form>
+        </el-dialog>
+        <!-- //03. 이메일 인증 확인 -->
+        
+        <el-dialog
+        title="로그인"
+        :visible.sync="loginDialogVisible"
+        class="pop-wrap login-pop-wrap"
+        width="40%"
+        center>
+        <div class="img-box"><img src="./images/chrismas.jpg" alt=""></div>
+        <div class="btn-group sns-btn-group">
+            <button class="kakao-btn">카카오톡으로 시작하기</button> 
+            <button class="google-btn">구글로 시작하기</button>
+        </div>
+        </el-dialog>
+        <!-- //로그인 팝업 -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    demoDialogVisible01: false,
+                    demoDialogVisible02 : false,
+                    demoDialogVisible03 : false,
+                    loginDialogVisible : false,
+                    isShow: false,
+                };
+            },
+            methods: {
+                mMennu : function(){
+                    this.isShow = !this.isShow
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

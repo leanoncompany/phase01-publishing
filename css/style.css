@@ -1,0 +1,141 @@
+.main-wrap .banner { height: calc(100vh - 82px); } 
+.main-wrap .banner .container { display: flex; align-items: center; justify-content: center; } 
+.main-wrap .banner .txt-box { margin-top: 0; } 
+.main-wrap .banner .txt-box h2 { font-size:54px; text-align: center; margin-bottom: 80px; word-break: keep-all;} 
+.main-wrap .banner .txt-box .btn-group { justify-content: space-around; } 
+.main-wrap .banner .txt-box .btn-group button { width: 220px;; width:auto; height:auto; line-height: 1; border-radius: 50px; font-size:20px; font-weight: 600; padding:20px 42px; background:inherit; margin:0; } 
+.main-wrap .banner .txt-box .btn-group a { width: 220px; border-radius: 50px; font-size:20px; font-weight: 600; } 
+
+.login-wrap { height: calc(100vh - 80px); } 
+.login-wrap .container { display: flex; align-items: center; justify-content: center; width: 500px; } 
+.login-wrap .login-group { width: 100%; } 
+.login-wrap .login-group h2 { text-align: center; } 
+.login-wrap .login-group form { margin-bottom: 40px; } 
+.login-wrap .login-group form .content { margin-bottom: 40px; } 
+.login-wrap .login-group form .content label { display: block; font-weight:600; margin-bottom: 6px; } 
+.login-wrap .login-group form .content input { width: 100%; } 
+.login-wrap .login-group form .btn-group a { width: 100%; border-radius: 50px; } 
+.login-wrap .login-group .sns-btn-group { display: block; } 
+.login-wrap .login-group .sns-btn-group button { display: block; width: 100%; border-radius: 50px; margin-bottom: 20px; } 
+.login-wrap .login-group .sns-btn-group .kakao-btn { background: url(../images/icon/icon-kakao.svg) no-repeat 24px; background-color:#FFDE00; } 
+.login-wrap .login-group .sns-btn-group .google-btn { background: url(../images/icon/icon-google.svg) no-repeat 24px; } 
+
+.signup-wrap { width: 100%; height: calc(100vh - 82px); } 
+.signup-wrap .container { display: flex; align-items: center; justify-content: center; width: 500px; } 
+.signup-wrap .signup-group { width: 100%; } 
+.signup-wrap .signup-group form .content { margin-bottom: 40px; } 
+.signup-wrap .signup-group form .content label { display: block; font-weight:600; margin-bottom: 6px; } 
+.signup-wrap .signup-group form .content input { width: 100%; } 
+.signup-wrap .signup-group form .content .phone-confirm-group button { width: 100px; height: 48px; font-size:15px; font-weight: bold; } 
+.signup-wrap .signup-group form .content .phone-confirm-box input { border-top: 0; } 
+.signup-wrap .signup-group form .agree-content label { cursor:pointer; } 
+.signup-wrap .signup-group form .agree-content input { width:auto; } 
+.signup-wrap .signup-group form .agree-content a { display: inline-block; text-decoration: underline; } 
+.signup-wrap .signup-group form .btn-group { justify-content: center; } 
+.signup-wrap .signup-group form .btn-group a { font-size:20px; font-weight: bold; } 
+
+/* 마이페이지 */
+.mypage-wrap { width: 100%; min-height: calc(100vh - 82px); padding:40px 0;}
+.mypage-wrap h2 {text-align: left; margin-bottom: 20px;}
+.mypage-wrap .mypage-group h3 {font-size:20px; margin-bottom: 20px;}
+        /* 이미지 넣게 되면 grid-auto-rows에 340px을 뺀다. */
+.mypage-wrap .mypage-group .leacture-list {display: grid; grid-template-columns: 1fr 1fr 1fr; grid-auto-rows: minmax(340px, auto); gap:20px;} 
+.mypage-wrap .mypage-group .leacture-list li {position: relative; background:#dbdbdb; }
+.mypage-wrap .mypage-group .leacture-list li a {display: block; width:100%; height:100%;}
+.mypage-wrap .mypage-group .leacture-list li a input[type="checkbox"] {position: absolute; top:4px; right:4px; width: 20px; height:20px;}
+.mypage-wrap .mypage-group .btn-group {justify-content: flex-end; margin-top: 80px;}
+.mypage-wrap .mypage-group .btn-group button {margin: 0; margin-left: 20px;}
+/* 마이페이지 삭제 팝업 */
+.delete-pop-wrap .el-dialog--center {width: 480px; }
+.delete-pop-wrap .btn-group {justify-content: center;}
+.delete-pop-wrap .btn-group button {margin: 0 10px;}
+
+/* 강의실 페이지 */
+.leacture-wrap { width: 100%; min-height: calc(100vh - 82px); overflow:hidden;}
+/* .leacture-wrap .container {display: flex; flex-direction: column;} */
+.leacture-wrap h2 {text-align: left; margin-bottom: 0; border:1px solid #dbdbdb; border-bottom:0; padding:14px 10px; background:#dbdbdb; font-size:22px;}
+.leacture-wrap .live-group {align-items: flex-start;}
+        /*동영상 들어오면 하단에 height 값 삭제 필요*/
+.leacture-wrap .live-group .live-video {width: calc(100% - 300px); height: calc(100vh - 82px); background:#999; overflow-y: auto;}
+.leacture-wrap .live-group .live-video .video-box {width: 100%; height:calc(100% - 62px)}
+.leacture-wrap .live-group .live-chat { width: 300px; height: calc(100vh - 82px); background:#fff; border:1px solid #DADADA; } 
+.leacture-wrap .live-group .live-chat .chat-header {position: relative; display: flex; justify-content: space-between; padding:12px; text-align: center; border-bottom:1px solid #DADADA; }
+.leacture-wrap .live-group .live-chat .chat-header .user-box {position: relative;}
+.leacture-wrap .live-group .live-chat .chat-header .user-box .user-num {padding:4px;}
+.leacture-wrap .live-group .live-chat .chat-header .user-box .user-list {position: absolute; left:0; width: 200px; height: 300px; padding:8px; border:1px solid #dbdbdb; background:#fff; overflow-y: auto;}
+.leacture-wrap .live-group .live-chat .chat-header .user-box .user-list li {margin-bottom: 8px;}
+.leacture-wrap .live-group .live-chat .chat-header .user-box .user-list li:last-child {margin-top: 0;}
+.leacture-wrap .live-group .live-chat .chat-header .user-box .user-list li .img-box {width: 20px; height: 20px; margin-right: 4px; background:#dbdbdb; border-radius: 50%; overflow:hidden;}
+.leacture-wrap .live-group .live-chat .chat-header .user-box .user-list li span {width: calc(100% - 84px); font-size:13px; text-align: left; overflow:hidden; white-space: nowrap; text-overflow: ellipsis;}
+.leacture-wrap .live-group .live-chat .chat-header .user-box .user-list li button {margin-left: auto;}
+.leacture-wrap .live-group .live-chat .chat-header .invite-btn {padding:4px;}
+.leacture-wrap .live-group .live-chat .chat-list { height: calc(100% - 138px); overflow-y: auto; padding:0 10px; } 
+.leacture-wrap .live-group .live-chat .chat-list li { display:flex; align-items: center; line-height: 2; font-size:13px; } 
+.leacture-wrap .live-group .live-chat .chat-list li .date { white-space: nowrap; width: 77px; margin-right:10px; font-size:13px; color:#999; } 
+.leacture-wrap .live-group .live-chat .chat-input { width: 100%; font-size:13px; align-items: center; border-top:1px solid #DADADA; } 
+.leacture-wrap .live-group .live-chat .chat-input form { display: flex; align-items: center; width: 100%; height: 100%; } 
+.leacture-wrap .live-group .live-chat .chat-input #message-form { padding:20px 14px; background:#F5F5F5; } 
+.leacture-wrap .live-group .live-chat .chat-input input { width: calc(100% - 60px); background:#F5F5F5; border-radius: 10px; outline: none; } 
+.leacture-wrap .live-group .live-chat .chat-input .send-btn {white-space: nowrap; padding:8px 10px; border-radius: 20px; } 
+.invite-pop-wrap .link-copy-btn {justify-content: space-between; border:1px solid #dbdbdb; margin-bottom: 20px; padding:8px;}
+.invite-pop-wrap .link-copy-btn span {width: 50px; border:1px solid #dbdbdb; border-radius:10px; padding:4px; text-align: center;}
+.invite-pop-wrap .link-copy-btn p {width: calc(100% - 130px); padding:0 10px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;}
+.invite-pop-wrap .link-copy-btn button {width: 80px; background:#dbdbdb; border-radius: 4px; padding:4px; text-align: center;}
+.invite-pop-wrap01 .el-dialog {max-width:700px;}
+.invite-pop-wrap01 .send-pop-group {justify-content: center;}
+.invite-pop-wrap01 .send-pop-group .send-box {width: 150px; padding:10px 20px; background:#dbdbdb; margin:0 10px; text-align: center; cursor:pointer;}
+.invite-pop-wrap02 h3 { margin-bottom: 20px;}
+.invite-pop-wrap02 .content input {margin-bottom: 10px;}
+.invite-pop-wrap02 .content input:last-child {margin-bottom: 0;}
+.invite-pop-wrap02 .add-people-btn {background:inherit; border:inherit; margin-bottom: 20px;}
+.invite-pop-wrap02 .btn-group {justify-content: center;}
+.invite-pop-wrap02 .btn-group button {height: 50px; line-height: 50px; margin:0 10px;}
+
+
+/*===========================================================================
+	반응형
+============================================================================*/
+@media (max-width:1200px) {
+}
+
+@media (max-width:768px) {
+    /* 메인페이지 */
+    .main-wrap .banner .txt-box h2 {font-size:34px; margin-bottom: 60px;}
+    .main-wrap .banner .txt-box .btn-group {flex-direction: column;}
+    .main-wrap .banner .txt-box .btn-group button {margin-bottom: 20px; padding:18px 40px;}
+    .main-wrap .banner .txt-box .btn-group a {padding:18px 40px;}
+
+    /* 마이페이지 */
+    .mypage-wrap .mypage-group .leacture-list {grid-template-columns: 1fr 1fr;}
+    .mypage-wrap .mypage-group .btn-group {margin-top: 60px;}
+    .mypage-wrap .mypage-group .btn-group button {width: 100px; height:44px; line-height: 44px;}
+    
+    /* 강의페이지 */
+    .leacture-wrap .container {padding-left: 0 !important; padding-right: 0 !important;}
+    .leacture-wrap .live-group {flex-direction: column;}
+    .leacture-wrap .live-group .live-video {width: 100%; height: 60vh;} 
+    .leacture-wrap .live-group .live-chat {width: 100%; height: calc(40vh - 80px);}
+    .leacture-wrap .live-group .live-chat .chat-header .user-box .user-list {height: 150px;}
+}
+
+@media (max-width:480px) {
+    /* 마이페이지 */
+    .mypage-wrap .mypage-group .leacture-list {grid-template-columns: 1fr;}
+
+    /* 강의실 상세페이지 */
+    .invite-pop-wrap01 .send-pop-group {flex-direction: column;}
+    .invite-pop-wrap01 .send-pop-group .send-box {width: 100%;}
+    .invite-pop-wrap01 .send-pop-group .sns-send-box {margin-bottom: 10px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+

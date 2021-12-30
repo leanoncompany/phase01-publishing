@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트명</title>
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <!-- UI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- UI JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="/js/jquery.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <div class="container col-group">
+                <div class="col-group">
+                    <h1 class="logo">
+                        <a href="/index.html"><img src="/images/" alt="로고"></a>
+                    </h1>
+                    <nav class="col-group gnb-group">
+                        <a href="/pages/service.html">서비스</a>
+                        <a href="/pages/teacher.html">강사</a>
+                        <a href="/pages/creator.html">크리에이터</a>
+                    </nav>
+                </div>
+                <nav class="col-group register-group">
+                    <a href="/pages/mypage.html">마이페이지</a>
+                    <a href="/index.html">로그아웃</a>
+                </nav>
+            </div> 
+        </header>
+        <!-- //header -->
+
+        <main id="main" class="leacture-wrap">
+            <div class="container">
+                <h2 class="tit">나의 강의실</h2>
+                <div class="col-group live-group">
+                    <div class="live-video">
+
+                    </div>
+                    <div class="live-chat">
+                        <div class="chat-header">
+                            <div class="user-box">
+                                <button class="user-num" @click="userDialogVisible">인원</button>
+                                <ul class="user-list" v-show="is_show">
+                                    <li class="col-group">
+                                        <div class="img-box"><img src="" alt=""></div>
+                                        <span>닉네임</span>
+                                        <button>1:1 채팅</button>
+                                    </li>
+                                    <li class="col-group">
+                                        <div class="img-box"><img src="" alt=""></div>
+                                        <span>닉네임</span>
+                                        <button>1:1 채팅</button>
+                                    </li>
+                                    <li class="col-group">
+                                        <div class="img-box"><img src="" alt=""></div>
+                                        <span>닉네임</span>
+                                        <button>1:1 채팅</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3>실시간 채팅</h3>
+                            <button class="invite-btn" @click="inviteDialogVisible01 = true">초대 링크</button>
+                        </div>
+                        <ul class="chat-list">
+                            <li><span class="date">05:08:39 PM</span>채팅을 입력해봅시다~ </li>
+                            <li><span class="date">05:10:11 PM</span>채팅팅팅 </li>
+                        </ul>
+                        <div class="col-group chat-input">
+                            <form id="message-form" action="">
+                                <input type="text" placeholder="채팅을 입력하세요." autocomplete="”off”">
+                                <button class="send-btn">보내기</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer"></footer>
+        <!-- //footer -->
+
+        <el-dialog
+        title="학생 정보 입력"
+        :visible.sync="studentInfoDialogVisible"
+        class="pop-wrap leacture-pop-wrap"
+        width="40%"
+        center>
+        <h4>처음 들어왔을 때만 입력이 필요합니다.</h4>
+            <form action="" method="GET">
+                <div class="content">
+                    <label for="studentType">유형</label>
+                    <select name="studentType" id="studentType">
+                        <option value="">학생</option>
+                        <option value="">학부모</option>
+                    </select>
+                </div>
+                <div class="content">
+                    <label for="studentName">학생 이름</label>
+                    <input type="text" name="studentName" id="studentName" placeholder="학생 이름">
+                </div>
+                <div class="content">
+                    <label for="studentgrade">학년</label>
+                    <select name="studentgrade" id="studentgrade">
+                        <option value="">초등학생</option>
+                        <option value="">중학교 1학년</option>
+                        <option value="">중학교 2학년</option>
+                        <option value="">중학교 3학년</option>
+                        <option value="">고등학교 1학년</option>
+                        <option value="">고등학교 2학년</option>
+                        <option value="">초등학생</option>
+                        <option value="">성인</option>
+                    </select>
+                </div>
+                <div class="content">
+                    <label for="studentPhone">휴대폰</label>
+                    <input type="text" name="studentPhone" id="studentPhone" placeholder="휴대폰">
+                </div>
+                <div class="content">
+                    <label for="studentEmail">이메일</label>
+                    <input type="text" name="studentEmail" id="studentEmail" placeholder="이메일">
+                </div>
+                <div class="btn-group">
+                    <button class="cancel-btn">취소하기</button> 
+                    <button class="create-btn">입장하기</button>
+                </div>
+            </form>
+        </el-dialog>
+        <!-- //학생정보 팝업 -->
+
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    studentInfoDialogVisible: true,
+                };
+            },
+        })
+    </script>
+</body>
+</html>

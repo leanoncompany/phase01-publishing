@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트명</title>
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <!-- UI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- vue cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- UI JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="/js/jquery.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <div class="container col-group">
+                <div class="col-group">
+                    <h1 class="logo">
+                        <a href="/index.html"><img src="/images/" alt="로고"></a>
+                    </h1>
+                    <nav class="col-group gnb-group">
+                        <a href="/pages/service.html">서비스</a>
+                        <a href="/pages/teacher.html">강사</a>
+                        <a href="/pages/creator.html">크리에이터</a>
+                    </nav>
+                </div>
+                <nav class="col-group register-group">
+                    <a href="/pages/mypage.html">마이페이지</a>
+                    <a href="/index.html">로그아웃</a>
+                </nav>
+            </div> 
+        </header>
+        <!-- //header -->
+
+        <main id="main" class="mypage-wrap">
+            <div class="container">
+                <h2 class="tit">OOO님 환영합니다.</h2>
+                <div class="mypage-group">
+                    <h3>지난 강의</h3>
+                    <ul class="leacture-list">
+                        <li><a href="./leactureDetail.html"><input type="checkbox" name="" id=""></a></li>
+                        <li><a href="./leactureDetail.html"><input type="checkbox" name="" id=""></a></li>
+                        <li><a href="./leactureDetail.html"><input type="checkbox" name="" id=""></a></li>
+                        <!-- // list 클릭 시 끝난 강의를 볼 수 있다. -->
+                    </ul>
+                    <div class="btn-group">
+                        <!-- 더보기버튼 클릭시 한줄씩 생성 -->
+                        <button class="more-btn">더보기</button>
+                        <!-- 삭제버튼 클릭시 체크박스 생성, 체크 후 한번 더 삭제 누르면 삭제 팝업 생성  -->
+                        <button class="delete-btn" @click="deleteDialogVisible = true">삭제</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer"></footer>
+        <!-- //footer -->
+
+        <el-dialog
+        title="삭제하시겠습니까?"
+        :visible.sync="deleteDialogVisible"
+        class="pop-wrap delete-pop-wrap"
+        center>
+            <div class="col-group btn-group">
+                <button >네</button>
+                <button  @click="deleteDialogVisible = false">아니오</button>
+            </div>
+        </el-dialog>
+        <!-- //삭제 팝업 -->
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    deleteDialogVisible: false,
+                };
+            },
+        })
+    </script>
+</body>
+</html>
