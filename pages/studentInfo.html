@@ -17,125 +17,81 @@
 </head>
 <body>
     <div id="app">
-        <header id="header">
-            <div class="container col-group">
-                <div class="col-group">
-                    <h1 class="logo">
-                        <a href="/index.html"><img src="/images/" alt="로고"></a>
-                    </h1>
-                    <nav class="col-group gnb-group">
-                        <a href="/pages/service.html">서비스</a>
-                        <a href="/pages/teacher.html">강사</a>
-                        <a href="/pages/creator.html">크리에이터</a>
-                    </nav>
-                </div>
-                <nav class="col-group register-group">
-                    <a href="/pages/mypage.html">마이페이지</a>
-                    <a href="/index.html">로그아웃</a>
-                </nav>
-            </div> 
-        </header>
-        <!-- //header -->
+
 
         <main id="main" class="leacture-wrap">
-            <div class="container">
-                <h2 class="tit">나의 강의실</h2>
-                <div class="col-group live-group">
-                    <div class="live-video">
 
-                    </div>
-                    <div class="live-chat">
-                        <div class="chat-header">
-                            <div class="user-box">
-                                <button class="user-num" @click="userDialogVisible">인원</button>
-                                <ul class="user-list" v-show="is_show">
-                                    <li class="col-group">
-                                        <div class="img-box"><img src="" alt=""></div>
-                                        <span>닉네임</span>
-                                        <button>1:1 채팅</button>
-                                    </li>
-                                    <li class="col-group">
-                                        <div class="img-box"><img src="" alt=""></div>
-                                        <span>닉네임</span>
-                                        <button>1:1 채팅</button>
-                                    </li>
-                                    <li class="col-group">
-                                        <div class="img-box"><img src="" alt=""></div>
-                                        <span>닉네임</span>
-                                        <button>1:1 채팅</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3>실시간 채팅</h3>
-                            <button class="invite-btn" @click="inviteDialogVisible01 = true">초대 링크</button>
-                        </div>
-                        <ul class="chat-list">
-                            <li><span class="date">05:08:39 PM</span>채팅을 입력해봅시다~ </li>
-                            <li><span class="date">05:10:11 PM</span>채팅팅팅 </li>
-                        </ul>
-                        <div class="col-group chat-input">
-                            <form id="message-form" action="">
-                                <input type="text" placeholder="채팅을 입력하세요." autocomplete="”off”">
-                                <button class="send-btn">보내기</button>
-                            </form>
+            <el-dialog
+            title="학생 정보 입력"
+            :visible.sync="studentInfoDialogVisible"
+            class="pop-wrap leacture-pop-wrap student-info-pop-wrap"
+            width="40%"
+            center>
+            <h4>처음 들어왔을 때만 입력이 필요합니다.</h4>
+                <form action="" method="GET">
+                    <div class="content">
+                        <label for="studentType">유형</label>
+                        <div class="col-group student-type">
+                            <el-radio v-model="radio" label="1">학생</el-radio>
+                            <el-radio v-model="radio" label="2">학부모</el-radio>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="content">
+                        <label for="studentName">이름</label>
+                        <div class="col-group">
+                            <input type="text" name="studentName" id="studentName" placeholder="이름을 입력해주세요">
+                        </div>
+                    </div>
+                    <div class="content">
+                        <label for="studentgrade">학년</label>
+                        <div class="col-group">
+                            <select name="studentgrade" id="studentgrade">
+                                <option value="">학년을 선택해주세요</option>
+                                <option value="">초등학생</option>
+                                <option value="">중학교 1학년</option>
+                                <option value="">중학교 2학년</option>
+                                <option value="">중학교 3학년</option>
+                                <option value="">고등학교 1학년</option>
+                                <option value="">고등학교 2학년</option>
+                                <option value="">초등학생</option>
+                                <option value="">성인</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <label for="studentPhone">휴대폰</label>
+                        <div class="col-group phone-group">
+                            <select name="" id="">
+                                <option value="">010</option>
+                                <option value="">011</option>
+                                <option value="">019</option>
+                            </select>
+                            <span>-</span>
+                            <input type="text" placeholder="1234">
+                            <span>-</span>
+                            <input type="text" placeholder="5678">
+                            
+                        </div>
+                    </div>
+                    <div class="content">
+                        <label for="studentEmail">이메일</label>
+                        <div class="col-group email-confirm-group email-group">
+                            <input type="text" name="userEmail" id="userEmail" placeholder="이메일을 입력해주세요.">
+                            <span>@</span>
+                            <select name="" id="">
+                                <option value="">naver.com</option>
+                            </select>
+                            <!-- 버튼 클릭시 01번 팝업은 닫아주세요. -->
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="cancel-btn">취소하기</button> 
+                        <button class="main-btn create-btn">입장하기</button>
+                    </div>
+                </form>
+            </el-dialog>
+            <!-- //학생정보 팝업 -->
         </main>
-        <!-- //main -->
-
-        <footer id="footer"></footer>
-        <!-- //footer -->
-
-        <el-dialog
-        title="학생 정보 입력"
-        :visible.sync="studentInfoDialogVisible"
-        class="pop-wrap leacture-pop-wrap"
-        width="40%"
-        center>
-        <h4>처음 들어왔을 때만 입력이 필요합니다.</h4>
-            <form action="" method="GET">
-                <div class="content">
-                    <label for="studentType">유형</label>
-                    <select name="studentType" id="studentType">
-                        <option value="">학생</option>
-                        <option value="">학부모</option>
-                    </select>
-                </div>
-                <div class="content">
-                    <label for="studentName">학생 이름</label>
-                    <input type="text" name="studentName" id="studentName" placeholder="학생 이름">
-                </div>
-                <div class="content">
-                    <label for="studentgrade">학년</label>
-                    <select name="studentgrade" id="studentgrade">
-                        <option value="">초등학생</option>
-                        <option value="">중학교 1학년</option>
-                        <option value="">중학교 2학년</option>
-                        <option value="">중학교 3학년</option>
-                        <option value="">고등학교 1학년</option>
-                        <option value="">고등학교 2학년</option>
-                        <option value="">초등학생</option>
-                        <option value="">성인</option>
-                    </select>
-                </div>
-                <div class="content">
-                    <label for="studentPhone">휴대폰</label>
-                    <input type="text" name="studentPhone" id="studentPhone" placeholder="휴대폰">
-                </div>
-                <div class="content">
-                    <label for="studentEmail">이메일</label>
-                    <input type="text" name="studentEmail" id="studentEmail" placeholder="이메일">
-                </div>
-                <div class="btn-group">
-                    <button class="cancel-btn">취소하기</button> 
-                    <button class="create-btn">입장하기</button>
-                </div>
-            </form>
-        </el-dialog>
-        <!-- //학생정보 팝업 -->
-
 
     </div>
     <script>
@@ -144,6 +100,7 @@
             data() {
                 return {
                     studentInfoDialogVisible: true,
+                    radio: '1'
                 };
             },
         })

@@ -23,7 +23,7 @@
                     <div class="col-group">
                         <div class="col-group">
                             <h1 class="logo">
-                                <a href="/index.html"><img src="/images/" alt="로고"></a>
+                                <a href="/index.html"><img src="/images/logo.png" alt="로고"></a>
                             </h1>
                             <nav class="col-group gnb-group">
                                 <a href="./pages/service.html">서비스</a>
@@ -32,7 +32,7 @@
                             </nav>
                         </div>
                         <nav class="col-group register-group">
-                            <a href="/pages/mypage.html">마이페이지</a>
+                            <a class="main-btn" href="/pages/mypage.html">마이페이지</a>
                             <a href="/index.html">로그아웃</a>
                         </nav>
                     </div>
@@ -40,7 +40,7 @@
                 <div class="mobile">
                     <div class="col-group">
                         <h1 class="logo">
-                            <a href="/index.html"><img src="/images/" alt="로고"></a>
+                            <a href="/index.html"><img src="/images/logo.png" alt="로고"></a>
                         </h1>
                         <button class="menu" @click="mMennu">
                             <img src="/images/icon/icon_menu.svg" alt="">
@@ -66,14 +66,15 @@
                 <div class="container">
                     <div class="txt-box">
                         <h2>
-                            프리랜서 강사와 크리에이터를 위한 <br>
-                            원스탑 서비스
+                            안녕하세요 <br>
+                            <strong>Support - T 입니다</strong>
                         </h2>
                         <div class="btn-group">
                             <button @click="lectureDialogVisible = true">강의실 생성하기</button>
-                            <a href="./pages/demo.html">데모 영상 보기</a>
+                            <a class="main-btn" href="./pages/demo.html">데모 영상 보기</a>
                         </div>
                     </div>
+                    <div class="img-box"><img src="./images/main-after.png" alt=""></div>
                 </div>
             </div>
         </main>
@@ -90,13 +91,18 @@
         center>
         <h4>줌을 연동하여 오프라인 강의를 진행해 보세요.</h4>
             <form action="" method="GET">
+                <div class="content file-cont">
+                    <input type="file">
+                    <img src="./images/ex-leacture2.png" alt="">
+                </div>
                 <div class="content">
-                    <label for="lectureName">강의실 이름</label>
+                    <label for="lectureName">강의</label>
                     <input type="text" name="lectureName" id="lectureName" placeholder="강의실 이름">
                 </div>
                 <div class="content">
                     <label for="lectureType">유형</label>
                     <select name="lectureType" id="lectureType">
+                        <option value="">유형</option>
                         <option value="">국어</option>
                         <option value="">영어</option>
                         <option value="">수학</option>
@@ -105,8 +111,9 @@
                     </select>
                 </div>
                 <div class="content">
-                    <label for="lecturePersonnel">인원수</label>
+                    <label for="lecturePersonnel">인원설정</label>
                     <select name="lecturePersonnel" id="lecturePersonnel">
+                        <option value="">인원을 선택하세요</option>
                         <option value="">1</option>
                         <option value="">2</option>
                         <option value="">3</option>
@@ -117,7 +124,7 @@
                 </div>
                 <div class="btn-group">
                     <button class="cancel-btn">취소하기</button> 
-                    <button class="create-btn">생성하기</button>
+                    <button class="main-btn create-btn">생성하기</button>
                 </div>
             </form>
         </el-dialog>

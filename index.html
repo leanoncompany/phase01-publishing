@@ -23,7 +23,7 @@
                     <div class="col-group">
                         <div class="col-group">
                             <h1 class="logo">
-                                <a href="/index.html"><img src="/images/" alt="로고"></a>
+                                <a href="/index.html"><img src="/images/logo.png" alt="로고"></a>
                             </h1>
                             <nav class="col-group gnb-group">
                                 <a href="./pages/service.html">서비스</a>
@@ -32,15 +32,15 @@
                             </nav>
                         </div>
                         <nav class="col-group register-group">
-                            <button @click="loginDialogVisible = true">로그인</button>
-                            <button @click="demoDialogVisible01 = true">무료로 시작하기</button>
+                            <button class="login-btn" @click="loginDialogVisible = true">로그인</button>
+                            <button class="main-btn" @click="demoDialogVisible01 = true">무료로 시작하기</button>
                         </nav>
                     </div>
                 </div>
                 <div class="mobile">
                     <div class="col-group">
                         <h1 class="logo">
-                            <a href="/index.html"><img src="/images/" alt="로고"></a>
+                            <a href="/index.html"><img src="/images/logo.png" alt="로고"></a>
                         </h1>
                         <button class="menu" @click="mMennu">
                             <img src="/images/icon/icon_menu.svg" alt="">
@@ -52,8 +52,8 @@
                             <a href="">서비스</a>
                             <a href="">강사</a>
                             <a href="">크리에이터</a>
-                            <button @click="loginDialogVisible = true">로그인</button>
-                            <button @click="demoDialogVisible01 = true">무료로 시작하기</button>
+                            <button class="login-btn" @click="loginDialogVisible = true">로그인</button>
+                            <button class="main-btn" @click="demoDialogVisible01 = true">무료로 시작하기</button>
                         </div>
                     </div>
                 </div>
@@ -67,13 +67,14 @@
                     <div class="txt-box">
                         <h2>
                             프리랜서 강사와 크리에이터를 위한 <br class="pc">
-                            원스탑 서비스
+                            <strong>원스탑 서비스</strong>
                         </h2>
                         <div class="btn-group">
                             <button @click="demoDialogVisible01 = true">무료로 시작하기</button>
-                            <a href="./pages/demo.html">데모 영상 보기</a>
+                            <a class="main-btn" href="./pages/demo.html">데모 영상 보기</a>
                         </div>
                     </div>
+                    <div class="img-box"><img src="./images/main-before.png" alt=""></div>
                 </div>
             </div>
         </main>
@@ -92,16 +93,22 @@
                 <div class="content">
                     <label for="userName">이름</label>
                     <div class="col-group email-confirm-box">
-                        <input type="text" name="userName" id="userName" placeholder="이름">
+                        <input type="text" name="userName" id="userName" placeholder="이름을 입력해주세요.">
                     </div>
                 </div>
                 <div class="content">
                     <label for="userEmail">이메일</label>
-                    <div class="col-group email-confirm-group">
-                        <input type="text" name="userEmail" id="userEmail" placeholder="이메일">
-                        <button type="button" @click="demoDialogVisible02 = true">신청하기</button>
+                    <div class="col-group email-confirm-group email-group">
+                        <input type="text" name="userEmail" id="userEmail" placeholder="이메일을 입력해주세요.">
+                        <span>@</span>
+                        <select name="" id="">
+                            <option value="">naver.com</option>
+                        </select>
                         <!-- 버튼 클릭시 01번 팝업은 닫아주세요. -->
                     </div>
+                </div>
+                <div class="btn-group">
+                    <button class="main-btn" type="button" @click="demoDialogVisible02 = true">신청하기</button>
                 </div>
             </form>
         </el-dialog>
@@ -110,23 +117,26 @@
         <el-dialog
         title="이메일로 인증코드가 전송되었습니다."
         :visible.sync="demoDialogVisible02"
-        class="pop-wrap"
+        class="pop-wrap pop-wrap2"
         width="40%"
         center>
             <form action="" method="GET">
                 <div class="content">
                     <div class="col-group email-confirm-group">
                         <input type="text" name="userEmailConfirm" id="userEmailConfirm" placeholder="인증번호 입력">
-                        <button type="button" @click="demoDialogVisible03 = true">인증하기</button>
+                        <span class="timer">03:00</span>
                         <!-- 버튼 클릭시 02번 팝업은 닫아주세요. -->
                     </div>
+                </div>
+                <div class="btn-group">
+                    <button class="main-btn" type="button" @click="demoDialogVisible03 = true">인증하기</button>
                 </div>
             </form>
         </el-dialog>
         <!-- //02. 이메일 인증 팝업 -->
 
         <el-dialog
-        title="인증 완료"
+        title="인증완료"
         :visible.sync="demoDialogVisible03"
         class="pop-wrap pop-wrap3"
         width="40%"
@@ -134,7 +144,7 @@
             <form action="" method="GET">
                 <div class="content">
                     <div class="col-group email-confirm-group">
-                        <button>서비스 이용하기</button>
+                        <button class="main-btn">서비스 이용하기</button>
                     </div>
                 </div>
             </form>
@@ -147,10 +157,10 @@
         class="pop-wrap login-pop-wrap"
         width="40%"
         center>
-        <div class="img-box"><img src="./images/chrismas.jpg" alt=""></div>
+        <div class="img-box"><img src="./images/icon/icon-lock.svg" alt=""></div>
         <div class="btn-group sns-btn-group">
-            <button class="kakao-btn">카카오톡으로 시작하기</button> 
-            <button class="google-btn">구글로 시작하기</button>
+            <button class="kakao-btn">카카오로 시작하기</button> 
+            <button class="google-btn">Google로 시작하기</button>
         </div>
         </el-dialog>
         <!-- //로그인 팝업 -->

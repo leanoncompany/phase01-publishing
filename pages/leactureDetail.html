@@ -23,7 +23,7 @@
                     <div class="col-group">
                         <div class="col-group">
                             <h1 class="logo">
-                                <a href="/index.html"><img src="/images/" alt="로고"></a>
+                                <a href="/index.html"><img src="/images/logo.png" alt="로고"></a>
                             </h1>
                             <nav class="col-group gnb-group">
                                 <a href="./pages/service.html">서비스</a>
@@ -40,7 +40,7 @@
                 <div class="mobile">
                     <div class="col-group">
                         <h1 class="logo">
-                            <a href="/index.html"><img src="/images/" alt="로고"></a>
+                            <a href="/index.html"><img src="/images/logo.png" alt="로고"></a>
                         </h1>
                         <button class="menu" @click="mMennu">
                             <img src="/images/icon/icon_menu.svg" alt="">
@@ -65,16 +65,47 @@
             <div class="container">
                 <div class="col-group live-group">
                     <div class="live-video">
+                        <h2 class="tit">강의실 이름 <span class="user-num">현재 13명 동시 수강중</span></h2>
                         <div class="video-box">
-
+                            <img src="../images/ex-leacture2.png" alt="">
                         </div>
-                        <h2 class="tit">강의실 이름</h2>
                     </div>
                     <div class="live-chat">
                         <div class="chat-header">
+                            <h3>실시간 채팅</h3>
                             <div class="user-box">
-                                <button class="user-num" @click="userDialogVisible">인원</button>
-                                <ul class="user-list" v-show="user_show">
+                                <button class="user-num" @click="userDialogVisible"><img src="../images/icon/icon-user.svg" alt="" /></button>
+                                <button class="invite-btn" @click="inviteDialogVisible01 = true"><img src="../images/icon/icon-user-add.svg" alt="" /></button>
+                            </div>
+                        </div>
+                        <div class="chat-body">
+                            <ul class="chat-list">
+                                <li>
+                                    <div class="profile-box"><img src="../images/profile.png" alt=""></div>
+                                    <p>채팅을 입력해봅시다~ </p>
+                                    <span class="date">05:08 PM</span>
+                                </li>
+                                <li>
+                                    <div class="profile-box"><img src="../images/profile.png" alt=""></div>
+                                    <p>채팅을 입력해봅시다~ </p>
+                                    <span class="date">05:08 PM</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-group chat-input">
+                            <form id="message-form" action="">
+                                <textarea type="text" placeholder="채팅을 입력하세요." ></textarea>
+                                <button class="send-btn">보내기</button>
+                            </form>
+                        </div>
+
+                        <div class="list-bg" v-show="user_show">
+                            <div class="user-list">
+                                <div class="list-header">
+                                    <h3>참여자</h3>
+                                    <img class="close-btn" src="../images/icon/icon_close.svg" alt="" @click="user_show = false"/>
+                                </div>
+                                <ul>
                                     <li class="col-group">
                                         <div class="img-box"><img src="" alt=""></div>
                                         <span>닉네임</span>
@@ -92,18 +123,6 @@
                                     </li>
                                 </ul>
                             </div>
-                            <h3>실시간 채팅</h3>
-                            <button class="invite-btn" @click="inviteDialogVisible01 = true">초대 링크</button>
-                        </div>
-                        <ul class="chat-list">
-                            <li><span class="date">05:08:39 PM</span>채팅을 입력해봅시다~ </li>
-                            <li><span class="date">05:10:11 PM</span>채팅팅팅 </li>
-                        </ul>
-                        <div class="col-group chat-input">
-                            <form id="message-form" action="">
-                                <input type="text" placeholder="채팅을 입력하세요." autocomplete="”off”">
-                                <button class="send-btn">보내기</button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -121,22 +140,21 @@
         width="50%"
         center>
             <div class="col-group link-copy-btn">
-                <span>소유자</span>
-                <p>https://desk.channel.io/wz</p>
-                <button>링크 복사</button>
+                <div class="col-group link-box">
+                    <span>소유자</span>
+                    <p>https://desk.channel.io/wz</p>
+                </div>
+                <button><img src="../images/icon/icon-link.svg" alt=""></button>
             </div>
             <div class="col-group send-pop-group">
                 <div class="send-box sns-send-box"  @click="smsInviteDialogVisible = true">
-                    <p>SMS로 초대하기</p>
-                </div>
-                <div class="send-box mail-send-box"  @click="emailInviteDialogVisible = true">
-                    <p>메일로 초대하기</p>
+                    <p class="col-group"><img src="../images/icon/icon-invite.svg" alt="">kakao로 초대하기</p>
                 </div>
             </div>
         </el-dialog>
         <!-- //초대팝업01 -->
 
-        <el-dialog
+        <!-- <el-dialog
         title="맴버 초대하기"
         :visible.sync="smsInviteDialogVisible"
         class="pop-wrap invite-pop-wrap invite-pop-wrap02"
@@ -156,10 +174,10 @@
                     <button class="create-btn">초대하기</button>
                 </div>
             </form>
-        </el-dialog>
+        </el-dialog> -->
         <!-- //초대팝업02 - SMS 초대 -->
 
-        <el-dialog
+        <!-- <el-dialog
         title="맴버 초대하기"
         :visible.sync="emailInviteDialogVisible"
         class="pop-wrap invite-pop-wrap invite-pop-wrap02"
@@ -179,7 +197,7 @@
                     <button class="create-btn">초대하기</button>
                 </div>
             </form>
-        </el-dialog>
+        </el-dialog> -->
         <!-- //초대팝업02 - 이메일초대 -->
     </div>
     <script>
